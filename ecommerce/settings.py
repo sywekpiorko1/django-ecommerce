@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = os.environ.get('127.0.0.1')
+ALLOWED_HOSTS = ['127.0.0.1', 'django-ecommerce-syl.herokuapp.com']
 
 
 # Application definition
@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'ecommerce.wsgi.application'
 if "DATABASE_URL" in os.environ: 
     DATABASES = {'default' : dj_database_url.parse(os.environ.get('DATABASE_URL'))} 
 else:
-    print("Databse URL not founf. Using SQLite instead")
+    print("Databse URL not found. Using SQLite instead")
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
